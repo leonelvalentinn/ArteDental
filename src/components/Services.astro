@@ -1,0 +1,29 @@
+---
+import Card from '../components/Card.astro'
+---
+<section class="w-full flex justify-center items-center my-10 flex-col">
+  <div class=" w-full flex justify-center items-start flex-col px-4 md:max-w-7xl">
+    <h2 class="text-gray-800 font-bold text-2xl md:text-4xl">Servicios</h2>
+    <hr class=" w-16 border-primary my-4 border-[1px]">
+    <div class="w-full grid grid-cols-1 gap-6 place-content-center place-items-center md:gap-10 md:grid-cols-[repeat(3,_minmax(250px,_350px))]">
+      <Card 
+        img='/implante-dental.png'
+        title='Implantología'
+        description='¿Perdiste uno o más dientes? No te preocupes, nuestros especialistas pueden reemplazar los espacios en tu sonrisa por un hermoso implante dental. Los implantes son la mejor manera de recuperar tu diente perdido.'
+        alt='Imagotipo Implante Dental'
+      />
+      <Card 
+        img='/diente.png'
+        title='Estetica Dental'
+        description='¡Di adiós a las manchas en los dientes, grietas, astillas, dientes irregulares y torceduras! ¡Desde la unión y carillas hasta el blanqueamiento dental y alargamiento de coronas, nuestro equipo de dentistas cosméticos te ayuda a crear la sonrisa perfecta con la que siempre has soñado!'
+        alt='Imagatipo Estetica Dental'
+      />
+      <Card 
+        img='/tirantes.png'
+        title='Ortodoncia'
+        description='Los dientes torcidos, los espacios entre los dientes y la mordida profunda son cosas del pasado con la ortodoncia. Los brackets pueden abordar incluso los problemas de mordida más complejos con facilidad. O puedes dejar atrás los brackets y los alambres con el tratamiento de Invisalign.'
+        alt='Imagotipo Ortodoncia'
+      />
+    </div>
+  </div>
+</section>

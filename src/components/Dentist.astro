@@ -9,8 +9,8 @@ interface Props {
 const { img, title, description, alt } = Astro.props
 ---
 
-<article class=" max-w-96">
-  <img class=" w-12" src={img} alt={alt}>
+<article class=" max-w-96 flex flex-col justify-start h-full">
+  <img class="rounded-ee-[80px]" src={img} alt={alt}>
   <h3 class=" font-bold text-xl text-gray-800 my-3">{title}</h3>
   <p>{description}</p>
 </article>
