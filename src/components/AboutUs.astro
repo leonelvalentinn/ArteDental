@@ -1,7 +1,7 @@
 ---
 import Dentist from '../components/Dentist.astro'
 ---
-<section class="w-full flex justify-center items-center my-10 flex-col">
+<section class="w-full flex justify-center items-center my-10 flex-col" id="nosotros">
   <div class="w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:my-10 md:gap-10 md:grid-cols-2 md:max-w-7xl">
     <article class=" animate-fade-in-right">
       <h1 class="text-gray-800 font-bold text-2xl md:text-4xl">Conócenos</h1>
@@ -13,7 +13,7 @@ import Dentist from '../components/Dentist.astro'
     </article>
     <img class="hidden rounded-ee-[80px] animate-fade-in-left md:block" src="/equipo.jpg" alt="Team Arte Dental Condesa">
   </div>
-  <div class=" w-full flex justify-center items-start flex-col my-8 px-4 md:max-w-7xl">
+  <div class=" w-full flex justify-center items-start flex-col mt-8 px-4 md:max-w-7xl">
     <div class="w-full grid grid-cols-1 gap-6 place-content-center place-items-center md:gap-10 md:grid-cols-[repeat(3,_minmax(250px,_350px))]">
       <Dentist 
         img='/doctor.jpg'

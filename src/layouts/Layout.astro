@@ -26,7 +26,9 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="bg-[#ffffffe6]">
-		<slot />
+		<div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
+			<slot />
+		</div>
 	</body>
 </html>
 <style is:global>
@@ -37,5 +39,14 @@ const { title } = Astro.props;
 		box-sizing: border-box;
 		padding: 0;
 		margin: 0;
+		scroll-behavior: smooth;
+	}
+	body::-webkit-scrollbar {
+		width: 12px;               /* width of the entire scrollbar */
+	}
+	body::-webkit-scrollbar-thumb {
+		background-color: #0b3c3c;    /* color of the scroll thumb */
+		border-radius: 20px;       /* roundness of the scroll thumb */
+		border: 3px solid white;  /* creates padding around scroll thumb */
 	}
 </style>
