@@ -1,18 +1,53 @@
+---
+import ArrowDown from '../components/ArrowDown.astro'
+---
+
 <header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"> 
   <nav class="flex px-3 text-sm font-medium rounded-full text-gray-600 justify-center items-center lg:text-base"> 
     <a class="relative block px-2 py-2 transition hover:text-third" aria-label="inicio" href="/"> Inicio </a>
     <a class="relative block px-2 py-2 transition hover:text-third" aria-label="servicios" href="/#servicios"> Servicios </a>
-    <a class="relative block px-2 py-2 transition hover:text-third" aria-label="carillas" href="/carillas"> Carillas </a>
+    <div class="relative flex justify-center items-end flex-col dropcontent" id="dropdown">
+      <a class=" px-2 py-2 transition hover:text-third cursor-pointer flex justify-center items-center" aria-label="carillas" id="carillas"> Carillas <ArrowDown class="w-3 pl-[2px] md:w-5 md:pl-1"/></a>
+      <!-- DropDown Menu -->
+      <div class="absolute top-8 rounded-xl left-0 dropdown p-2 md:top-10" id="dropdownContent">
+        <a class="relative px-2 py-2 transition hover:text-third cursor-pointer " aria-label="carillas" href="/carillas"> Carillas </a>
+        <a class="relative px-2 py-2 transition hover:text-third cursor-pointer " aria-label="microcarillas" href="/microcarillas"> Microcarillas </a>
+      </div>
+    </div>
     <a class="relative block px-2 py-2 transition hover:text-third" aria-label="ubicacion" href="/#ubicacion"> Ubicación </a>
     <a class="relative block px-2 py-2 transition hover:text-third" aria-label="contacto" href="https://wa.me/525516513563?text=Buenas%20tardes,%20solicito%20informaci%C3%B3n%20sobre"> Contacto </a> 
   </nav> 
 </header>
 
 <style>
+  #carillas svg {
+    transition: all 0.175s ease-out;
+  }
+  #carillas:hover > svg {
+    transition: all 0.175s ease-out;
+    transform: rotate(180deg);
+    padding-left: 0;
+    padding-right: 4px;
+  }
   nav {
     animation: nav-shadown 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
+  }
+  .dropdown {
+    opacity: 0;
+    transition: all 0.21s ease-out;
+    background-color: rgb(209 213 219 / .8);
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow, 0 0 #0000);
+    --tw-ring-color: rgb(255 255 255 / .1);
+    --tw-backdrop-blur: blur(8px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   }
   @keyframes nav-shadown {
     100% {
@@ -40,3 +75,20 @@
     }
   }
 </style>
+
+<script>
+  const dropdown:any = document.getElementById('dropdown')
+  const dropdownContent: any = document.getElementById('dropdownContent')
+  dropdown.addEventListener('mouseover', () => {
+    dropdownContent.style.display = 'block'
+    setTimeout(() => {
+      dropdownContent.style.opacity = '1'
+    }, 50)
+  })
+  dropdown.addEventListener('mouseleave', () => {
+    dropdownContent.style.opacity = '0'
+    setTimeout(() => {
+      dropdownContent.style.display = 'none'
+    }, 50)
+  })
+</script>

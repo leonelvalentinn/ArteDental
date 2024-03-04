@@ -1,0 +1,13 @@
+---
+interface Props {
+  img: string
+  alt: string
+  text: string
+}
+const { img, alt, text } = Astro.props
+---
+
+<li class="splide__slide px-3">
+  <img class=" rounded-ee-[80px]" src={img} alt={alt}>
+  <p class="mt-4">{text}</p>
+</li>

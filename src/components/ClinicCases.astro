@@ -1,0 +1,47 @@
+---
+import '@splidejs/splide/css';
+import Slide from './Slide.astro';
+---
+<section class="w-full flex justify-center items-center my-10 flex-col" id="servicios">
+  <div class=" w-full flex justify-center items-center flex-col px-4 md:max-w-7xl">
+    <h2 class="text-gray-800 font-bold text-start text-2xl md:text-4xl">Casos Clínicos</h2>
+    <hr class=" w-16 border-primary my-4 border-[1px]">
+    <div class="w-full md:max-w-5xl">
+      <section class="splide" aria-label="Splide Basic HTML Example">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <Slide 
+              img='/caso-1.jpeg'
+              alt='caso clinico'
+              text='La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
+            />
+            <Slide 
+              img='/caso-1.jpeg'
+              alt='caso clinico'
+              text='La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
+            />
+            <Slide 
+              img='/caso-1.jpeg'
+              alt='caso clinico'
+              text='La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
+            />
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Splide from '@splidejs/splide';
+  new Splide( '.splide', {
+    type   : 'loop',
+    perPage: 3,
+    breakpoints: {
+      767: {
+        perPage: 1,
+      },
+    }
+  } ).mount();
+</script>
+
