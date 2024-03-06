@@ -5,6 +5,7 @@ import Hero from '../components/Hero.astro'
 import Footer from '../components/Footer.astro'
 import Map from '../components/Map.astro'
 import ClinicCases from '../components/ClinicCases.astro'
+import Slide from '../components/Slide.astro'
 ---
 
 <Layout title="Carillas | Arte Dental Condesa">
@@ -57,7 +58,23 @@ import ClinicCases from '../components/ClinicCases.astro'
 				<a class=" py-2 px-4 bg-primary rounded-full inline-block transition text-white my-4 hover:transition-all hover:scale-110" href="https://wa.me/525516513563?text=Buenas%20tardes,%20solicito%20informaci%C3%B3n%20sobre" target="_blank" rel="noopener noreferrer">Agendar Cita</a>
 			</div>
 		</section>
-		<ClinicCases />
+		<ClinicCases>
+			<Slide 
+				img='/caso-1.jpeg'
+				alt='caso clinico'
+				text='La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
+			/>
+			<Slide 
+				img='/caso-1.jpeg'
+				alt='caso clinico'
+				text='La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
+			/>
+			<Slide 
+				img='/caso-1.jpeg'
+				alt='caso clinico'
+				text='La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
+			/>
+		</ClinicCases>
 		<Map />
 		<Footer />
 	</main>

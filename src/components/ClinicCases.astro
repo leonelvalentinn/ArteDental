@@ -1,6 +1,5 @@
 ---
 import '@splidejs/splide/css';
-import Slide from './Slide.astro';
 ---
 <section class="w-full flex justify-center items-center my-10 flex-col" id="servicios">
   <div class=" w-full flex justify-center items-center flex-col px-4 md:max-w-7xl">
@@ -10,21 +9,7 @@ import Slide from './Slide.astro';
       <section class="splide" aria-label="Splide Basic HTML Example">
         <div class="splide__track">
           <ul class="splide__list">
-            <Slide 
-              img='/caso-1.jpeg'
-              alt='caso clinico'
-              text='La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
-            />
-            <Slide 
-              img='/caso-1.jpeg'
-              alt='caso clinico'
-              text='La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
-            />
-            <Slide 
-              img='/caso-1.jpeg'
-              alt='caso clinico'
-              text='La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
-            />
+            <slot />
           </ul>
         </div>
       </section>
@@ -34,14 +19,24 @@ import Slide from './Slide.astro';
 
 <script>
   import Splide from '@splidejs/splide';
+  import { Intersection } from '@splidejs/splide-extension-intersection';
   new Splide( '.splide', {
     type   : 'loop',
     perPage: 3,
+    autoplay: 'pause',
+    intersection: {
+      inView: {
+        autoplay: true,
+      },
+      outView: {
+        autoplay: false,
+      },
+    },
     breakpoints: {
       767: {
         perPage: 1,
       },
     }
-  } ).mount();
+  } ).mount( { Intersection } );
 </script>
 
