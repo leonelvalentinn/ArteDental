@@ -2,7 +2,8 @@
 interface Props {
 	title: string;
 }
-const description = ''
+const url = 'https://artedentalcondesa.dentarios.com.mx'
+const description = 'Somos una clínica dental especializada en transformar sonrisas mediante carillas, microcarillas e implantes híbridos. Con un enfoque innovador y tecnología de vanguardia, ofrecemos soluciones estéticas y funcionales de alta calidad para mejorar la apariencia y salud dental de nuestros pacientes. ¡Descubre cómo podemos hacer brillar tu sonrisa hoy mismo!'
 const { title } = Astro.props;
 ---
 
@@ -21,8 +22,8 @@ const { title } = Astro.props;
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
-		<!--<meta property="og:url" content={url} />-->
-		<meta property="og:image" content="/favicon.svg" />
+		<meta property="og:url" content={url} />
+		<meta property="og:image" content="https://artedentalcondesa.dentarios.com.mx/favicon.svg" />
 		<title>{title}</title>
 		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 	</head>
