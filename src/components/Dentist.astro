@@ -1,5 +1,6 @@
 ---
 import ArrowDown from './ArrowDown.astro'
+import ButtonCita from './ButtonCita.astro'
 
 interface Props {
   img: string
@@ -17,7 +18,12 @@ const { img, title, description, alt } = Astro.props
     <h3 class=" font-bold text-xl text-gray-800 my-3">{title}</h3>
     <ArrowDown class="w-4 pl-[2px] transition-all text-gray-800 md:w-6 md:pl-0"/>
   </button>
-  <p class="max-h-0 scale-0 transition-all duration-[400ms] overflow-hidden" id="text">{description}</p>
+  <div class="max-h-0 scale-0 transition-all duration-[500ms] overflow-hidden origin-bottom" id="text">
+    <p>{description}</p>
+    <ButtonCita 
+      text="Contáctanos"
+    />
+  </div>
 </article>
 
 <style>
@@ -33,8 +39,9 @@ const { img, title, description, alt } = Astro.props
   }
   .show {
     transform: scale(1);
-    max-height: 150px;
+    max-height: 300px;
     transition: all 0.3s linear;
+    transform-origin: top;
   }
   .rotate {
     transform: rotate(180deg);
@@ -44,7 +51,7 @@ const { img, title, description, alt } = Astro.props
 
 <script>
   const btnShow = document.querySelectorAll('article.btnServices > button')
-  const text = document.querySelectorAll('p#text')
+  const text = document.querySelectorAll('div#text')
   const arrow = document.querySelectorAll('article.btnServices > button > svg')
 
   btnShow.forEach((item, i) => (

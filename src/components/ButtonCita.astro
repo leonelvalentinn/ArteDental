@@ -1,6 +1,6 @@
 ---
 interface Props {
-  text: string
+  text?: string
 }
 const { text } = Astro.props
 ---
@@ -10,6 +10,7 @@ const { text } = Astro.props
   href="https://wa.me/525516513563?text=Buenas%20tardes,%20solicito%20informaci%C3%B3n%20sobre" 
   target="_blank" 
   rel="noopener noreferrer"
+  aria-label="Agenda tu cita"
 >
-  {text}
+  {text ? text : "Agendar Cita"}
 </a>
