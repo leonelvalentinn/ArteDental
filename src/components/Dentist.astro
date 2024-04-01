@@ -1,4 +1,6 @@
 ---
+import ArrowDown from './ArrowDown.astro'
+
 interface Props {
   img: string
   title: string
@@ -9,14 +11,46 @@ interface Props {
 const { img, title, description, alt } = Astro.props
 ---
 
-<article class=" max-w-96 flex flex-col justify-start h-full">
+<article class=" max-w-96 flex flex-col justify-start h-full btnServices">
   <img class="rounded-ee-[80px]" src={img} alt={alt}>
-  <h3 class=" font-bold text-xl text-gray-800 my-3">{title}</h3>
-  <p>{description}</p>
+  <button class="w-full flex justify-between items-center">
+    <h3 class=" font-bold text-xl text-gray-800 my-3">{title}</h3>
+    <ArrowDown class="w-4 pl-[2px] transition-all text-gray-800 md:w-6 md:pl-0"/>
+  </button>
+  <p class="max-h-0 scale-0 transition-all duration-[400ms] overflow-hidden" id="text">{description}</p>
 </article>
 
 <style>
   img {
     aspect-ratio: 5/3;
   }
+  button:hover svg {
+    transition: all 0.2s linear;
+    color: rgb(11, 60, 60);
+  }
+  button:hover h3 {
+    color: rgb(11, 60, 60);
+  }
+  .show {
+    transform: scale(1);
+    max-height: 150px;
+    transition: all 0.3s linear;
+  }
+  .rotate {
+    transform: rotate(180deg);
+    transition: all 0.2s linear;
+  }
 </style>
+
+<script>
+  const btnShow = document.querySelectorAll('article.btnServices > button')
+  const text = document.querySelectorAll('p#text')
+  const arrow = document.querySelectorAll('article.btnServices > button > svg')
+
+  btnShow.forEach((item, i) => (
+    item.addEventListener('click', () => {
+      text[i].classList.toggle('show')
+      arrow[i].classList.toggle('rotate')
+    })
+  ))
+</script>
