@@ -1,9 +1,9 @@
 export const GALLERY = [
   {
-    treatment: "Implante Dental"
+    treatment: "Microcarillas Dentales"
   }, 
   {
-    treatment: "Coronas"
+    treatment: "Carillas de composite"
   },
   {
     treatment: "Carillas"
