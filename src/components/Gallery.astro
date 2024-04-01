@@ -1,0 +1,24 @@
+---
+import ButtonCita from "./ButtonCita.astro";
+import { GALLERY } from "../const/gallery";
+import Case from "./Case.astro";
+---
+
+<div class="w-full flex justify-center items-center mb-10">
+  <section class="w-full grid grid-cols-1 galeria-casos max-w-7xl md:grid-cols-2 lg:grid-cols-3">
+    <article class=" animate-fade-in-right md:pr-5 md:pb-3">
+      <h2 class="text-gray-800 font-bold text-2xl md:text-4xl">Casos de éxito</h2>
+      <hr class=" w-16 border-primary my-6 border-[1px]">
+      <p>En nuestra clínica dental, nos enorgullece compartir una sección dedicada a los casos de éxito de nuestros pacientes. Cada historia es única y representa un testimonio de transformación y satisfacción. Desde la corrección de problemas de alineación hasta la restauración de sonrisas deslumbrantes, nuestros expertos han ayudado a personas de todas las edades a recuperar su confianza y salud bucal.</p>
+      <ButtonCita text="Agendar Cita" />
+    </article>
+    {
+      Array.from({ length: GALLERY.length }).map((_, i) => (
+        <Case 
+          treatment={GALLERY[i].treatment}
+          img={`/casos/caso${i+1}.png`}
+        />
+      ))
+    }
+  </section>
+</div>

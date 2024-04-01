@@ -1,0 +1,42 @@
+---
+interface Props {
+  treatment: string
+  img: string
+}
+const { treatment, img } = Astro.props
+---
+
+<article class="relative flex justify-center items-center item-casos">
+  <img class="w-full" src={img} alt="Caso de Éxito">
+  <a 
+    class="content-4"
+    href="https://wa.me/525516513563?text=Buenas%20tardes,%20solicito%20informaci%C3%B3n%20sobre"  
+    target="_blank"
+    rel="noopener noreferrer"
+    title={`Agenda tu cita para tu(s) ${treatment}`}
+  >
+    {treatment}
+  </a>
+</article>
+
+<style>
+  .item-casos .content-4 {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0);
+    transition: 0.5s;
+    background-color: rgba(11, 60, 60, 0.858);
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    color: white;
+  }
+  .item-casos:hover .content-4 {
+    transform: scale(1);
+  }
+</style>

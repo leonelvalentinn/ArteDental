@@ -1,0 +1,71 @@
+---
+import SingleReview from "./SingleReview.astro";
+import { REVIEWS } from "../const/reviews"
+import '@splidejs/splide/css';
+import ButtonCita from "./ButtonCita.astro";
+---
+
+<div class="w-full flex justify-center items-center bg-cover bg-center bg-no-repeat container-testimonios">
+  <div class=" bg-primary/60 flex w-full justify-center items-center">
+    <section class="flex w-full justify-center items-center max-w-7xl">
+      <div class="px-4 py-14 flex justify-center items-center flex-col md:flex-row md:w-full" id="Testimonios">
+        <div class="flex justify-center items-start flex-col text-start mb-5 md:pr-4">
+          <h3 class="text-white font-bold text-2xl md:text-4xl">Testimonios</h3>
+          <hr class=" w-16 border-primary my-6 border-[1px]">
+          <h4 class="text-white text-semibold text-xl">Opinión de Nuestros Pacientes</h4>
+          <ButtonCita text="Agendar Cita" />
+        </div>
+        <div class="splide w-[300px] my-0 ml-auto max-w-2xl md:w-[400px] lg:w-full" aria-label="Slider de reseñas de los pacientes" id="slider-resenas">                          
+          <div class="splide__track">
+            <ul class="splide__list">
+              {
+                Array.from({ length: REVIEWS.length }).map((_, i) => (
+                  <SingleReview 
+                    text={REVIEWS[i].text}
+                    name={REVIEWS[i].name}
+                    img={REVIEWS[i].img}
+                  />
+                ))
+              }
+            </ul>
+          </div>                         
+        </div> 
+      </div>
+    </section>
+  </div>
+</div>
+
+<style>
+  .container-testimonios {
+    background-image: url(/reviews.webp);
+  }
+  .splide__pagination__page.is-active {
+    background: rgb(11, 60, 60) !important;
+  }
+</style>
+
+<script>
+  import Splide from '@splidejs/splide';
+  import { Intersection } from '@splidejs/splide-extension-intersection';
+  new Splide( '#slider-resenas', {
+    type   : 'loop',
+    perPage: 2,
+    autoplay: 'pause',
+    interval: 2500,
+    arrows: false,
+    breakpoints: {
+      1020: {
+        perPage: 1,
+        padding: 0,
+      },
+    },
+    intersection: {
+      inView: {
+        autoplay: true,
+      },
+      outView: {
+        autoplay: false,
+      },
+    },
+  } ).mount( { Intersection } );
+</script>
