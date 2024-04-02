@@ -9,7 +9,7 @@ import ArrowDown from '../components/ArrowDown.astro'
     <div class="relative flex justify-center items-end flex-col dropcontent" id="dropdown">
       <button class=" px-2 py-2 transition hover:text-third cursor-pointer flex justify-center items-center" aria-label="Menu carillas" id="carillas"> Carillas <ArrowDown class="w-4 pl-[2px] md:w-5 md:pl-1"/></button>
       <!-- DropDown Menu -->
-      <div class="absolute top-8 rounded-xl left-0 dropdown p-2 md:top-10" id="dropdownContent">
+      <div class="absolute hidden top-8 rounded-xl left-0 dropdown p-2 md:top-10" id="dropdownContent">
         <a class="relative inline-block px-2 py-1 transition hover:text-third cursor-pointer " aria-label="carillas" href="/carillas"> Carillas </a>
         <a class="relative inline-block px-2 py-1 transition hover:text-third cursor-pointer " aria-label="microcarillas" href="/microcarillas"> Microcarillas </a>
       </div>

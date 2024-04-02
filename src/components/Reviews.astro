@@ -11,7 +11,7 @@ import ButtonCita from "./ButtonCita.astro";
       <div class="px-4 py-14 flex justify-center items-center flex-col md:flex-row md:w-full" id="Testimonios">
         <div class="flex justify-center items-start flex-col text-start mb-5 md:pr-4 lg:pr-16">
           <h3 class="text-white font-bold text-2xl md:text-4xl">Testimonios</h3>
-          <hr class=" w-16 border-primary my-6 border-[1px]">
+          <hr class=" w-16 border-white my-6 border-[1px]">
           <p class="text-white text-semibold">En Arte Dental Condesa, celebramos los éxitos de nuestros pacientes con una sección dedicada a sus historias. Las opiniones de pacientes reflejan la atención personalizada y resultados excepcionales que ofrecemos. Únase a nuestra familia de pacientes satisfechos y descubra el poder transformador de la odontología moderna.</p>
           <ButtonCita text="Agendar Cita" />
         </div>
@@ -64,6 +64,7 @@ import ButtonCita from "./ButtonCita.astro";
     autoplay: 'pause',
     interval: 2500,
     arrows: false,
+    gap: '10px',
     classes: {
       pagination: 'splide__pagination custom-pagination',
       page      : 'splide__pagination__page custom-pagination-page',

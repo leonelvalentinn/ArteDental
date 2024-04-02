@@ -28,6 +28,14 @@ const { title, keywords } = Astro.props;
 		<meta property="og:url" content={url} />
 		<meta property="og:image" content="https://artedentalcondesa.dentarios.com.mx/favicon.png" />
 		<title>{title}</title>
+		<!-- Google Tag Manager -->
+		<script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-TK3ZF3TN');
+		</script>
+		<!-- End Google Tag Manager -->
 		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-WF3RY5RWFL"></script>
@@ -41,6 +49,11 @@ const { title, keywords } = Astro.props;
 		</script>
 	</head>
 	<body class="bg-[#ffffffe6]">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK3ZF3TN"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) -->
 		<div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
 			<slot />
 			<ButtonFixed />
