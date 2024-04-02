@@ -7,18 +7,19 @@ interface Props {
   title: string
   description: string
   alt: string
+  clases?: string
 }
 
-const { img, title, description, alt } = Astro.props
+const { img, title, description, alt, clases } = Astro.props
 ---
 
 <article class=" max-w-96 flex flex-col justify-start h-full btnServices">
-  <img class="rounded-ee-[80px]" src={img} alt={alt}>
+  <img class={clases} src={img} alt={alt}>
   <button class="w-full flex justify-between items-center">
     <h3 class=" font-bold text-xl text-gray-800 my-3">{title}</h3>
     <ArrowDown class="w-4 pl-[2px] transition-all text-gray-800 md:w-6 md:pl-0"/>
   </button>
-  <div class="max-h-0 scale-0 transition-all duration-[500ms] overflow-hidden origin-bottom" id="text">
+  <div class="max-h-0 transition-all duration-[500ms] overflow-hidden origin-bottom" id="text">
     <p>{description}</p>
     <ButtonCita 
       text="Contáctanos"
@@ -38,7 +39,6 @@ const { img, title, description, alt } = Astro.props
     color: rgb(11, 60, 60);
   }
   .show {
-    transform: scale(1);
     max-height: 300px;
     transition: all 0.3s linear;
     transform-origin: top;

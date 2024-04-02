@@ -7,26 +7,28 @@ interface Props {
   reverse?: boolean
   isHero?: boolean
   number?: string
+  error?: string
 }
 
-const { title, text, span, img, isHero, reverse, number } = Astro.props
+const { title, text, span, img, isHero, reverse, number, error } = Astro.props
 
 import ButtonCita from "./ButtonCita.astro"
 ---
 
 <section class="w-full flex justify-center items-center mt-12 md:mt-20">
   <div class='w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:gap-10 md:grid-cols-[repeat(2,_minmax(350px,_500px))] md:max-w-7xl'>
-    <article class={`animate-fade-in-right ${reverse ? "md:order-2" : ""}`}>
+    <img class={`animate-fade-in-left ${reverse ? "rounded-es-[80px]" : "rounded-ee-[80px] md:order-2"}`} src={img} alt="Consultorio Arte Dental">
+    <article class={`animate-fade-in-right`}>
       <a href="/" rel="noopener noreferrer" class={`items-center justify-center ${isHero ? "flex" : "hidden"} md:justify-start`}>
-        <img class=" w-36 mb-3" src="/logo-arte-dental-full-alt.png" alt="Logo Arte Dental">
+        <img decoding={`${isHero ? "auto" : "async"}`} class=" w-36 mb-3" src="/logo-arte-dental-full-alt.png" alt="Logo Arte Dental">
       </a>
       <h1 class="text-gray-800 font-bold text-2xl md:text-4xl">{title}</h1>
       <hr class=" w-16 border-primary my-6 border-[1px]">
       <p>{text}<br> <span class="font-semibold text-secondary text-lg">{span}</span></p>
       <ButtonCita 
         text={number ? number : ""}
+        error={error ? error : ""}
       />
     </article>
-    <img class={`animate-fade-in-left ${reverse ? "rounded-es-[80px]" : "rounded-ee-[80px]"}`} src={img} alt="Consultorio Arte Dental">
   </div>
 </section>

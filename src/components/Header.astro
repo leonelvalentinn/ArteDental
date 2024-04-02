@@ -3,19 +3,19 @@ import ArrowDown from '../components/ArrowDown.astro'
 ---
 
 <header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"> 
-  <nav class="flex px-3 text-sm font-medium rounded-full text-gray-600 justify-center items-center lg:text-base"> 
+  <nav class="flex px-3 text-base font-medium rounded-full text-gray-600 justify-center items-center lg:text-lg"> 
     <a class="relative block px-2 py-2 transition hover:text-third" aria-label="inicio" href="/"> Inicio </a>
     <a class="relative block px-2 py-2 transition hover:text-third" aria-label="servicios" href="/#servicios"> Servicios </a>
     <div class="relative flex justify-center items-end flex-col dropcontent" id="dropdown">
-      <button class=" px-2 py-2 transition hover:text-third cursor-pointer flex justify-center items-center" aria-label="Menu carillas" id="carillas"> Carillas <ArrowDown class="w-3 pl-[2px] md:w-5 md:pl-1"/></button>
+      <button class=" px-2 py-2 transition hover:text-third cursor-pointer flex justify-center items-center" aria-label="Menu carillas" id="carillas"> Carillas <ArrowDown class="w-4 pl-[2px] md:w-5 md:pl-1"/></button>
       <!-- DropDown Menu -->
       <div class="absolute top-8 rounded-xl left-0 dropdown p-2 md:top-10" id="dropdownContent">
-        <a class="relative px-2 py-2 transition hover:text-third cursor-pointer " aria-label="carillas" href="/carillas"> Carillas </a>
-        <a class="relative px-2 py-2 transition hover:text-third cursor-pointer " aria-label="microcarillas" href="/microcarillas"> Microcarillas </a>
+        <a class="relative inline-block px-2 py-1 transition hover:text-third cursor-pointer " aria-label="carillas" href="/carillas"> Carillas </a>
+        <a class="relative inline-block px-2 py-1 transition hover:text-third cursor-pointer " aria-label="microcarillas" href="/microcarillas"> Microcarillas </a>
       </div>
     </div>
     <a class="relative block px-2 py-2 transition hover:text-third" aria-label="ubicacion" href="#ubicacion"> Ubicación </a>
-    <a class="relative block px-2 py-2 transition hover:text-third" aria-label="contacto" href="https://wa.me/525516513563?text=Buenas%20tardes,%20solicito%20informaci%C3%B3n%20sobre" target="_blank" rel="noopener noreferrer"> Contacto </a> 
+    <a class="relative hidden px-2 py-2 transition hover:text-third sm:block" aria-label="contacto" href="https://wa.me/525516513563?text=Buenas%20tardes,%20solicito%20informaci%C3%B3n%20sobre" target="_blank" rel="noopener noreferrer"> Contacto </a> 
   </nav> 
 </header>
 
@@ -27,7 +27,7 @@ import ArrowDown from '../components/ArrowDown.astro'
     transition: all 0.175s ease-out;
     transform: rotate(180deg);
     padding-left: 0;
-    padding-right: 4px;
+    padding-right: 3px;
   }
   nav {
     animation: nav-shadown 1s linear both;
@@ -70,7 +70,7 @@ import ArrowDown from '../components/ArrowDown.astro'
       padding-right: 0.25rem;
     }
     nav {
-      font-size: 0.75rem;
+      font-size: 1.05rem;
       line-height: 1rem;
     }
   }

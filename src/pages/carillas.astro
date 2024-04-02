@@ -16,6 +16,7 @@ import Slide from '../components/Slide.astro'
 			text='Descubre cómo nuestras carillas dentales pueden revitalizar tu sonrisa. Nuestros tratamientos estéticos ofrecen soluciones personalizadas y de alta calidad para corregir imperfecciones dentales, desde manchas hasta desalineaciones. Con tecnología avanzada y un equipo de profesionales expertos, te ofrecemos resultados naturales y duraderos que mejorarán tu confianza y tu apariencia. '
 			span='¡Embellece tu sonrisa y transforma tu vida con nuestras opciones de carillas dentales!'
 			img='/carillas-hero.webp'
+			isHero
 		/>
 		<section class="w-full flex justify-center items-center my-10 flex-col" id="nosotros">
 			<div class="w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:my-10 md:gap-10 md:grid-cols-2 md:max-w-7xl">
@@ -77,6 +78,13 @@ import Slide from '../components/Slide.astro'
 				text='La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
 			/>
 		</ClinicCases>
+		<Hero 
+			img='/promo-consulta.webp'
+			title='Consulta de primera revisión dental ¡Sin costo!'
+			text='Obtén una consulta de primera revisión dental totalmente gratuita en nuestra clínica. Nuestro equipo de expertos está listo para cuidar de tu salud bucal sin ningún costo en tu primera visita. No esperes más, agenda tu cita ahora mismo y descubre cómo podemos ayudarte a mantener una sonrisa radiante y saludable.'
+			span='¡Tu sonrisa es nuestra prioridad!'
+			reverse
+		/>
 		<Map />
 		<Footer />
 	</main>
