@@ -39,8 +39,19 @@ import ButtonCita from "./ButtonCita.astro";
   .container-testimonios {
     background-image: url(/reviews.webp);
   }
-  .splide__pagination__page.is-active {
-    background: rgb(11, 60, 60) !important;
+  .custom-pagination {
+    background: rgba(11, 60, 60, 0.447);
+  }
+  .custom-pagination-page {
+    background: rgb(11, 60, 60);
+  }
+  .splide__pagination {
+    counter-reset: pagination-num;
+  }
+
+  .splide__pagination__page:before {
+    counter-increment: pagination-num;
+    content: counter( pagination-num );
   }
 </style>
 
@@ -53,6 +64,10 @@ import ButtonCita from "./ButtonCita.astro";
     autoplay: 'pause',
     interval: 2500,
     arrows: false,
+    classes: {
+      pagination: 'splide__pagination custom-pagination',
+      page      : 'splide__pagination__page custom-pagination-page',
+    },
     breakpoints: {
       1020: {
         perPage: 1,
