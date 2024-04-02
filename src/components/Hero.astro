@@ -1,7 +1,7 @@
 ---
 interface Props {
   title: string
-  text:string
+  text: string
   span: string
   img: string
   reverse?: boolean
@@ -19,8 +19,8 @@ import ButtonCita from "./ButtonCita.astro"
   <div class='w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:gap-10 md:grid-cols-[repeat(2,_minmax(350px,_500px))] md:max-w-7xl'>
     <img decoding={`${isHero ? "sync" : "async"}`} class={`animate-fade-in-left ${reverse ? "rounded-es-[80px]" : "rounded-ee-[80px] md:order-2"}`} src={img} alt="Consultorio Arte Dental">
     <article class={`animate-fade-in-right`}>
-      <a href="/" rel="noopener noreferrer" class={`items-center justify-center ${isHero ? "flex" : "hidden"} md:justify-start`}>
-        <img loading="eager" class=" w-36 mb-3" src="/logo-arte-dental-full-alt.png" alt="Logo Arte Dental">
+      <a href="/" class={`w-36 items-center justify-center ${isHero ? "flex" : "hidden"} md:justify-start`}>
+        <img loading="eager" class=" w-full mb-3" src="/logo-arte-dental-full-alt.png" alt="Logo Arte Dental">
       </a>
       <h1 class="text-gray-800 font-bold text-2xl md:text-4xl">{title}</h1>
       <hr class=" w-16 border-primary my-6 border-[1px]">
