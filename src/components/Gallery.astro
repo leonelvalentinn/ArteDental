@@ -16,9 +16,8 @@ import Case from "./Case.astro";
       Array.from({ length: GALLERY.length }).map((_, i) => (
         <Case 
           treatment={GALLERY[i].treatment}
-          img={`/casos/caso${i+1}.png`}
+          img={`/casos/caso${i+1}.webp`}
         />
       ))
     }
   </section>
-</div>
