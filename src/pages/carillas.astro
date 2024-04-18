@@ -1,15 +1,68 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Header from '../components/Header.astro'
 import Hero from '../components/Hero.astro'
-import Footer from '../components/Footer.astro'
 import Map from '../components/Map.astro'
 import ClinicCases from '../components/ClinicCases.astro'
 import Slide from '../components/Slide.astro'
+import DescriptionService from '../components/DescriptionService.astro'
+import Advantages from '../components/Advantages.astro'
+
+const info = [
+	{
+		text: 'Fabricamos carillas tanto de porcelana como de composite con un grosor mínimo (similar al de una lentilla), lo que hace que sean imperceptibles.'
+	},
+	{
+		text: 'Contamos con infinidad de tonos similares al color de tus dientes naturales, por lo que las carillas no se distinguen del resto de piezas dentales.'
+	},
+	{
+		text: 'Antes de colocar las carillas, realizamos un tallado dental. Es totalmente seguro y permite que el resultado sea completamente natural y estético.'
+	},
+	{
+		text: 'El tallado se realiza siempre bajo anesteisa local para evitar cualquier molestia.'
+	},
+	{
+		text: 'El tratamiento es corto, ya que en tan sólo dos o tres visitas a la clínica puedes tener tus carillas fabricadas y colocadas.'
+	},
+]
+
+const points = [
+		{
+			text: 'Profesionales especializados en estética y carillas dentales'
+		}, 
+		{
+			text: 'Atención cercana y personalizada'
+		}, 
+		{
+			text: 'Contamos con la tecnología para realizar cualquier prueba en nuestra clínica'
+		}, 
+		{
+			text: 'Los pacientes que tratamos comparten su satisfacción con nuestra clínica'
+		}, 
+		{
+			text: 'Trabajamos con laboratorios muy avanzados para fabricar las carillas y marcas de alta gama'
+		}
+	]
+
+const reviews = [
+	{
+		imgSrc: '/casos/caso-1.webp',
+		alt: 'caso clinicocaso clinico',
+		text: 'La paciente desea un diseño de sonrisa. Se realiza el estudio y se opta por unas carillas de composite'
+	},
+	{
+		imgSrc: '/casos/caso-2.webp',
+		alt: 'caso clinico',
+		text: 'El paciente deseaba eliminar la separación entre sus dientes. Se analiza su caso y se colocan unas carillas de porcelana para crear su diseño de sonrisa'
+	},
+	{
+		imgSrc: '/caso-1.webp',
+		alt: 'caso clinico',
+		text: 'La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
+	},
+]
 ---
 
 <Layout title="Carillas | Arte Dental Condesa" keywords='Carillas dentales, carillas, carillas sin dolor, carillas sin desgaste, carillas de composite, carillas de porcelana, Arte Dental Condesa, Odontología, Dentista, Clínica dental, Tratamientos dentales, Cuidado dental, Salud bucal, Odontología preventiva, Ortodoncia, Implantes dentales, Blanqueamiento dental, Endodoncia, Prótesis dentales, Periodoncia, Carillas dentales, Odontopediatría, Estética dental, Radiografías dentales, Cirugía oral, Urgencias dentales, Sedación consciente'>
-	<Header />
 	<main>
 		<Hero 
 			title='Conoce nuestros tipos de carillas'
@@ -18,65 +71,42 @@ import Slide from '../components/Slide.astro'
 			img='/carillas-hero.webp'
 			isHero
 		/>
-		<section class="w-full flex justify-center items-center my-10 flex-col" id="nosotros">
-			<div class="w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:my-10 md:gap-10 md:grid-cols-2 md:max-w-7xl">
-				<article class=" animate-fade-in-right">
-					<h1 class="text-gray-800 font-bold text-2xl md:text-4xl">¿Qué son las carillas dentales?</h1>
-					<hr class=" w-16 border-primary my-6 border-[1px]">
-					<img class="rounded-ee-[80px] mb-6 md:hidden" src="/carillas-h.webp" alt="Team Arte Dental Condesa">
-					<p>La carilla dental es un pequeña y fina lámina de porcelana generalmente, aunque también puede ser de otros materiales como el composite, que se adhiere a la parte frontal del diente para enmascarar o tapar problemas. Estas se crean a medida de cada paciente y posteriormente se adhieren a la cara visible del diente. De esta manera, pueden solucionar defectos que afean tu sonrisa, tales como fracturas, desgastes, separaciones, manchas, decoloraciones o irregularidades.</p>
-				</article>
-				<img class="hidden rounded-ee-[80px] animate-fade-in-left md:block" src="/carillas-h.webp" alt="Team Arte Dental Condesa">
-			</div>
-		</section>
-		<section class="w-full flex justify-center items-center my-10 flex-col" id="servicios">
-			<div class=" w-full flex justify-center items-start flex-col px-4 md:max-w-4xl">
-				<h2 class="text-gray-800 font-bold text-2xl md:text-4xl">Ventajas de las carillas</h2>
-				<hr class=" w-16 border-primary my-4 border-[1px]">
-			</div>
-			<div class="w-full flex justify-center items-center px-4 flex-col md:max-w-screen-md">
-				<p>A la hora de elegir entre las carillas de porcelana (e.max y Lumineers) o composite, es necesario valorar varios aspectos: duración, estética y coste. Las de porcelana no se tiñen con el paso del tiempo y pueden llegar a durar 20 años. Por su parte, las de composite duran alrededor de 5 años y son más económicas.</p>
-				<ul class="pl-4 my-6 list-disc md:pl-0">
-					<li class="mb-2 marker:text-primary">Fabricamos carillas tanto de porcelana como de composite con un grosor mínimo (similar al de una lentilla), lo que hace que sean imperceptibles.</li>
-					<li class="mb-2 marker:text-primary">Contamos con infinidad de tonos similares al color de tus dientes naturales, por lo que las carillas no se distinguen del resto de piezas dentales.</li>
-					<li class="mb-2 marker:text-primary">Antes de colocar las carillas, realizamos un tallado dental. Es totalmente seguro y permite que el resultado sea completamente natural y estético.</li>
-					<li class="mb-2 marker:text-primary">El tallado se realiza siempre bajo anesteisa local para evitar cualquier molestia.</li>
-					<li class="mb-2 marker:text-primary">El tratamiento es corto, ya que en tan sólo dos o tres visitas a la clínica puedes tener tus carillas fabricadas y colocadas.</li>
-				</ul>
-			</div>
-		</section>
-		<section class="w-full flex justify-center items-center my-10 flex-col" id="servicios">
-			<div class=" w-full flex justify-center items-start flex-col px-4 md:max-w-4xl">
-				<h2 class="text-gray-800 font-bold text-2xl md:text-4xl">5 razones por las que elegirnos</h2>
-				<hr class=" w-16 border-primary my-4 border-[1px]">
-			</div>
-			<div class="w-full flex justify-center items-center px-4 flex-col md:max-w-screen-md">
-				<ul class="pl-4 my-6 list-disc md:pl-0">
-					<li class="mb-2 marker:text-primary">Profesionales especializados en estética y carillas dentales</li>
-					<li class="mb-2 marker:text-primary">Atención cercana y personalizada</li>
-					<li class="mb-2 marker:text-primary">Contamos con la tecnología para realizar cualquier prueba en nuestra clínica</li>
-					<li class="mb-2 marker:text-primary">Los pacientes que tratamos comparten su satisfacción con nuestra clínica</li>
-					<li class="mb-2 marker:text-primary">Trabajamos con laboratorios muy avanzados para fabricar las carillas y marcas de alta gama</li>
-				</ul>
-				<a class=" py-2 px-4 bg-primary rounded-full inline-block transition text-white my-4 hover:transition-all hover:scale-110" href="https://wa.me/525516513563?text=Buenas%20tardes,%20solicito%20informaci%C3%B3n%20sobre" target="_blank" rel="noopener noreferrer">Agendar Cita</a>
-			</div>
-		</section>
+		<DescriptionService 
+			title='¿Qué son las carillas dentales?'
+			imgSrc='/carillas-h.webp'
+			description='La carilla dental es un pequeña y fina lámina de porcelana generalmente, aunque también puede ser de otros materiales como el composite, que se adhiere a la parte frontal del diente para enmascarar o tapar problemas. Estas se crean a medida de cada paciente y posteriormente se adhieren a la cara visible del diente. De esta manera, pueden solucionar defectos que afean tu sonrisa, tales como fracturas, desgastes, separaciones, manchas, decoloraciones o irregularidades.'
+			alt='Sonrisa realizada con carillas dentales'
+		/>
+		<Advantages
+			title='Ventajas de las carillas'
+			description='A la hora de elegir entre las carillas de porcelana (e.max y Lumineers) o composite, es necesario valorar varios aspectos: duración, estética y coste. Las de porcelana no se tiñen con el paso del tiempo y pueden llegar a durar 20 años. Por su parte, las de composite duran alrededor de 5 años y son más económicas.'
+		>
+			{
+				info.map((item) => (
+					<li class="marker:text-primary">{item.text}</li>
+				))
+			}
+		</Advantages>
+		<Advantages
+			title='5 razones por las que elegirnos'
+		>
+			{
+				points.map((item) => (
+				<li class="marker:text-primary">{item.text}</li>
+				))
+			}
+			<a slot="button" class="w-[max-content] py-2 px-4 bg-primary rounded-full inline-block transition text-white my-4 hover:transition-all hover:scale-110" href="https://wa.me/525516513563?text=Buenas%20tardes,%20solicito%20informaci%C3%B3n%20sobre" target="_blank" rel="noopener noreferrer">Agendar Cita</a>
+		</Advantages>
 		<ClinicCases >
-			<Slide 
-				img='/casos/caso-1.webp'
-				alt='caso clinico'
-				text='La paciente desea un diseño de sonrisa. Se realiza el estudio y se opta por unas carillas de composite'
-			/>
-			<Slide 
-				img='/casos/caso-2.webp'
-				alt='caso clinico'
-				text='El paciente deseaba eliminar la separación entre sus dientes. Se analiza su caso y se colocan unas carillas de porcelana para crear su diseño de sonrisa'
-			/>
-			<Slide  
-				img='/caso-1.webp'
-				alt='caso clinico'
-				text='La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
-			/>
+			{
+				reviews.map((review) => (
+					<Slide  
+						img={review.imgSrc}
+						alt={review.alt}
+						text={review.text}
+					/>
+				))
+			}
 		</ClinicCases>
 		<Hero 
 			img='/promo-consulta.webp'
@@ -86,6 +116,5 @@ import Slide from '../components/Slide.astro'
 			reverse
 		/>
 		<Map />
-		<Footer />
 	</main>
 </Layout>

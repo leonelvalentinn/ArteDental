@@ -1,15 +1,53 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Header from '../components/Header.astro'
 import Hero from '../components/Hero.astro'
-import Footer from '../components/Footer.astro'
 import Map from '../components/Map.astro'
 import ClinicCases from '../components/ClinicCases.astro'
 import Slide from '../components/Slide.astro'
+import DescriptionService from '../components/DescriptionService.astro'
+import Advantages from '../components/Advantages.astro'
+
+const info = [
+	{
+		text: 'Sin desgaste dental y poco invasivas'
+	},
+	{
+		text: 'Solucionar fracturas parciales del diente'
+	},
+	{
+		text: 'Conseguir el tono de blanco deseado para la sonrisa de forma permanente, ya que no cambian su color ni se oscurecen con el paso del tiempo'
+	},
+	{
+		text: 'En piezas dentales demasiado pequeñas, es posible modificar su tamaño para hacer que la sonrisa tenga más amplitud'
+	},
+	{
+		text: 'Corregir los espacios entre dientes, o diastemas, que perjudican la imagen del paciente'
+	},
+	{
+		text: 'Resultados duraderos, ya que las microcarillas de porcelana se mantienen en perfecto estado durante muchos años'
+	}
+]
+
+const clinicCases = [
+	{
+		imgSrc: '/casos/caso-4.webp',
+		alt: 'caso clinico',
+		description: 'La paciente deseaba mejorar su sonrisa. Se le plantean las opciones posibles y se opta por unas microcarillas de porcelana.'
+	},
+	{
+		imgSrc: '/casos/caso-5.webp',
+		alt: 'caso clinico',
+		description: 'La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
+	},
+	{
+		imgSrc: '/caso-1.webp',
+		alt: 'caso clinico',
+		description: 'La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
+	},
+]
 ---
 
 <Layout title="Microcarillas | Arte Dental Condesa" keywords='microcarillas dentales, microcarillas, microcarillas sin desgaste, microcarillas sin dolor, Arte Dental Condesa, Odontología, Dentista, Clínica dental, Tratamientos dentales, Cuidado dental, Salud bucal, Odontología preventiva, Ortodoncia, Implantes dentales, Blanqueamiento dental, Endodoncia, Prótesis dentales, Periodoncia, Carillas dentales, Odontopediatría, Estética dental, Radiografías dentales, Cirugía oral, Urgencias dentales, Sedación consciente'>
-	<Header />
 	<main>
 		<Hero 
 			title='Conoce nuestros tipos de microcarillas'
@@ -18,36 +56,23 @@ import Slide from '../components/Slide.astro'
 			img='/estetica.webp'
 			isHero
 		/>
-		<section class="w-full flex justify-center items-center my-10 flex-col" id="nosotros">
-			<div class="w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:my-10 md:gap-10 md:grid-cols-2 md:max-w-7xl">
-				<article class=" animate-fade-in-right">
-					<h1 class="text-gray-800 font-bold text-2xl md:text-4xl">¿Qué son las microcarillas?</h1>
-					<hr class=" w-16 border-primary my-6 border-[1px]">
-					<img class="rounded-ee-[80px] mb-6 md:hidden" src="/microcarillas-esteticas.webp" alt="Sonrisa realizada con microcarillas dentales">
-					<p>
-						Las microcarillas ofrecen un resultado muy natural, duradero y en tan solo unos días. Se trata de unas láminas de porcelana, de un grosor mínimo, que se colocan en la superficie dental con el fin de conseguir una sonrisa permanentemente blanca, alineada y armónica. Si estás pensando en colocarte microcarillas y necesitas ampliar la información, en este artículo te explicamos todo lo que debes saber.</p>
-				</article>
-				<img class="hidden rounded-ee-[80px] animate-fade-in-left md:block" src="/microcarillas-esteticas.webp" alt="Team Arte Dental Condesa">
-			</div>
-		</section>
-		<section class="w-full flex justify-center items-center my-10 flex-col" id="servicios">
-			<div class=" w-full flex justify-center items-start flex-col px-4 md:max-w-4xl">
-				<h2 class="text-gray-800 font-bold text-2xl md:text-4xl">Ventajas de las microcarillas</h2>
-				<hr class=" w-16 border-primary my-4 border-[1px]">
-			</div>
-			<div class="w-full flex justify-center items-center px-4 flex-col md:max-w-screen-md">
-				<p>La gran ventaja de las microcarillas es que consiguen dar un giro a la sonrisa de una manera muy sencilla y en absoluto invasiva. Estas láminas se colocan en las piezas dentales que se ven al sonreír, es decir, en los dientes superiores de canino a canino. Su función es estética y con este tratamiento se corrigen pequeños defectos de la sonrisa que nos gustaría cambiar, como:</p>
-				<ul class="pl-4 my-6 list-disc md:pl-0">
-					<li class="mb-2 marker:text-primary font-bold text-lg text-primary">Sin desgaste dental y poco invasivas <small class="text-gray-800 font-extralight">*previa valoración</small></li>
-					<li class="mb-2 marker:text-primary">Solucionar fracturas parciales del diente</li>
-					<li class="mb-2 marker:text-primary">Conseguir el tono de blanco deseado para la sonrisa de forma permanente, ya que no cambian su color ni se oscurecen con el paso del tiempo</li>
-					<li class="mb-2 marker:text-primary">En piezas dentales demasiado pequeñas, es posible modificar su tamaño para hacer que la sonrisa tenga más amplitud</li>
-					<li class="mb-2 marker:text-primary">Corregir los espacios entre dientes, o diastemas, que perjudican la imagen del paciente</li>
-					<li class="mb-2 marker:text-primary">Resultados duraderos, ya que las microcarillas de porcelana se mantienen en perfecto estado durante muchos años</li>
-				</ul>
-			</div>
-		</section>
-		<section class="w-full flex justify-center items-center my-10 flex-col" id="servicios">
+		<DescriptionService 
+			title='¿Qué son las microcarillas?'
+			imgSrc='/microcarillas-esteticas.webp'
+			alt='Sonrisa realizada con microcarillas dentales'
+			description='Las microcarillas ofrecen un resultado muy natural, duradero y en tan solo unos días. Se trata de unas láminas de porcelana, de un grosor mínimo, que se colocan en la superficie dental con el fin de conseguir una sonrisa permanentemente blanca, alineada y armónica. Si estás pensando en colocarte microcarillas y necesitas ampliar la información, en este artículo te explicamos todo lo que debes saber.'
+		/>
+		<Advantages
+			title='Ventajas de las microcarillas'
+			description='La gran ventaja de las microcarillas es que consiguen dar un giro a la sonrisa de una manera muy sencilla y en absoluto invasiva. Estas láminas se colocan en las piezas dentales que se ven al sonreír, es decir, en los dientes superiores de canino a canino. Su función es estética y con este tratamiento se corrigen pequeños defectos de la sonrisa que nos gustaría cambiar, como:'
+		>
+			{
+				info.map((item, i) => (
+					<li class="marker:text-primary">{item.text} {i === 0 ? <small class="text-gray-800 font-extralight">*previa valoración</small> : ''}</li>
+				))
+			}
+		</Advantages>
+		<section class="w-full flex justify-center items-center my-10 flex-col">
 			<div class=" w-full flex justify-center items-start flex-col px-4 md:max-w-4xl">
 				<h2 class="text-gray-800 font-bold text-2xl md:text-4xl">¿Hay diferencias entre carillas y microcarillas?</h2>
 				<hr class=" w-16 border-primary my-4 border-[1px]">
@@ -60,21 +85,15 @@ import Slide from '../components/Slide.astro'
 			</div>
 		</section>
 		<ClinicCases>
-			<Slide 
-				img='/casos/caso-4.webp'
-				alt='caso clinico'
-				text='La paciente deseaba mejorar su sonrisa. Se le plantean las opciones posibles y se opta por unas microcarillas de porcelana.'
-			/>
-			<Slide 
-				img='/casos/caso-5.webp'
-				alt='caso clinico'
-				text='La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
-			/>
-			<Slide 
-				img='/caso-1.webp'
-				alt='caso clinico'
-				text='La paciente lleva unas carillas antiguas de composite que estaban en mal estado y filtradas. Se han sustituido por unas microcarillas de porcelana.'
-			/>
+			{
+				clinicCases.map((item) => (
+					<Slide 
+						img={item.imgSrc}
+						alt={item.alt}
+						text={item.description}
+					/>
+				))
+			}
 		</ClinicCases>
 		<Hero 
 			img='/promo-consulta.webp'
@@ -84,6 +103,5 @@ import Slide from '../components/Slide.astro'
 			reverse
 		/>
 		<Map />
-		<Footer />
 	</main>
 </Layout>
