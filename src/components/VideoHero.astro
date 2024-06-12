@@ -1,27 +1,67 @@
 ---
-import ButtonCita from './ButtonCita.astro'
+import ButtonCita from "./ButtonCita.astro";
 ---
 
-<section class="w-full flex justify-center items-center mt-16 md:mt-20">
-  <div class='w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:gap-10 md:grid-cols-[repeat(2,_minmax(350px,_600px))] md:max-w-7xl'>
-    <article class="animate-fade-in-right grid place-items-center order-2 md:order-1 md:mt-0 md:max-w-lg md:place-items-start">
-      <a href="/" class={`w-36 items-center justify-center flex md:justify-start`}>
-        <img loading="eager" class=" w-full mb-3" src="/logo-arte-dental-full-alt.png" alt="Logo Arte Dental" width="532" height="254">
+<section class="w-full mb-12">
+  <video
+    class="w-full aspect-[9/16] md:hidden"
+    src="/video/vertical.mp4"
+    autoplay
+    muted
+    controls></video>
+  <video
+    class="w-full aspect-video hidden md:block"
+    src="/video/horizontal.mp4"
+    autoplay
+    muted
+    controls></video>
+</section>
+<section class="w-full flex justify-center items-center">
+  <div
+    class="w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:gap-10 md:grid-cols-[repeat(2,_minmax(350px,_600px))] md:max-w-7xl"
+  >
+    <article
+      class="animate-fade-in-right grid place-items-center order-2 md:order-1 md:mt-0 md:max-w-lg md:place-items-start"
+    >
+      <a
+        href="/"
+        class={`w-36 items-center justify-center flex md:justify-start`}
+      >
+        <img
+          loading="eager"
+          class="w-full mb-3"
+          src="/logo-arte-dental-full-alt.png"
+          alt="Logo Arte Dental"
+          width="532"
+          height="254"
+        />
       </a>
-      <h1 class="text-gray-800 font-bold text-2xl text-center md:text-start md:text-4xl">Cuidado Personalizado para tu Sonrisa</h1>
-      <hr class=" w-16 border-primary my-6 border-[1px]">
-      <p>Arte Dental Condesa es tu destino para una atención dental excepcional en el corazón de Condesa. Nuestro equipo altamente calificado combina la pasión por el arte y la ciencia para ofrecerte tratamientos personalizados en un ambiente acogedor y moderno. Con tecnología de vanguardia y un enfoque centrado en el paciente, estamos aquí para que tu experiencia dental sea cómoda y satisfactoria.<br> <span class="font-semibold text-secondary text-lg">¡Ven y descubre el arte de sonreír con confianza en Arte Dental Condesa!</span></p>
-      <ButtonCita 
-        text='5516513563'
-        error=''
-      />
+      <h1
+        class="text-gray-800 font-bold text-2xl text-center md:text-start md:text-4xl"
+      >
+        Cuidado Personalizado para tu Sonrisa
+      </h1>
+      <hr class="w-16 border-primary my-6 border-[1px]" />
+      <p>
+        Arte Dental Condesa es tu destino para una atención dental excepcional
+        en el corazón de Condesa. Nuestro equipo altamente calificado combina la
+        pasión por el arte y la ciencia para ofrecerte tratamientos
+        personalizados en un ambiente acogedor y moderno. Con tecnología de
+        vanguardia y un enfoque centrado en el paciente, estamos aquí para que
+        tu experiencia dental sea cómoda y satisfactoria.<br />
+        <span class="font-semibold text-secondary text-lg"
+          >¡Ven y descubre el arte de sonreír con confianza en Arte Dental
+          Condesa!</span
+        >
+      </p>
+      <ButtonCita text="5516513563" error="" />
     </article>
-    <iframe 
+    <iframe
       class="w-full aspect-video max-w-5xl rounded-2xl order-1 md:order-2"
-      src="https://www.youtube.com/embed/Ude_jBpepvA?si=XUd-vUtS532kcQlC&autoplay=1&mute=1" 
-      title="Video Presentación Arte Dental Condesa" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin" 
+      src="https://www.youtube.com/embed/Ude_jBpepvA?si=XUd-vUtS532kcQlC"
+      title="Video Presentación Arte Dental Condesa"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen
     >
     </iframe>

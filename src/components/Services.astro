@@ -1,51 +1,67 @@
 ---
-import Dentist from '../components/Dentist.astro'
---- 
-<section class="w-full flex justify-center items-center my-10 flex-col" id="servicios">
-  <div class=" w-full flex justify-center items-start flex-col px-4 md:max-w-7xl">
-    <h2 class="text-gray-800 font-bold text-4xl md:text-5xl">Servicios Estrella</h2>
-    <hr class=" w-20 border-primary my-4 border-[1px]">
-    <div class="w-full grid grid-cols-1 gap-6 place-content-center place-items-center lg:gap-10 md:grid-cols-[repeat(3,_minmax(20px,_350px))]">
-      <Dentist 
-        img='/microcarillas-esteticas.webp'
-        title='Microcarillas sin Desgaste'
-        description='¡Logra una sonrisa impecable al instante con Microcarillas! Corrige imperfecciones dentales en tiempo récord. Discretas, duraderas y perfectas para una transformación rápida. ¡Descubre la revolución en estética dental hoy mismo!'
-        alt='Sonrisa con microcarillas'
+import Dentist from "../components/Dentist.astro";
+---
+
+<section
+  class="w-full flex justify-center items-center my-10 flex-col"
+  id="servicios"
+>
+  <div
+    class="w-full flex justify-center items-start flex-col px-4 md:max-w-7xl"
+  >
+    <h2 class="text-gray-800 font-bold text-4xl md:text-5xl">
+      Servicios Estrella
+    </h2>
+    <hr class="w-20 border-primary my-4 border-[1px]" />
+    <p class="mb-4">
+      Descubre nuestro catálogo de servicios dentales especializados y encuentra
+      la forma perfecta de mejorar tu sonrisa. En Arte Dental Condesa, estamos
+      comprometidos con tu bienestar dental y queremos ofrecerte soluciones
+      personalizadas que se adapten a tus deseos y necesidades.
+    </p>
+    <div
+      class="w-full grid grid-cols-1 gap-6 place-content-center place-items-center lg:gap-10 md:grid-cols-[repeat(3,_minmax(20px,_350px))]"
+    >
+      <Dentist
+        img="/microcarillas-esteticas.webp"
+        title="Microcarillas sin Desgaste"
+        description="¡Logra una sonrisa impecable al instante con Microcarillas! Corrige imperfecciones dentales en tiempo récord. Discretas, duraderas y perfectas para una transformación rápida. ¡Descubre la revolución en estética dental hoy mismo!"
+        alt="Sonrisa con microcarillas"
         clases="rounded-se-[80px]"
       />
-      <Dentist 
-        img='/hibrido.webp'
-        title='Prótesis Híbrida'
-        description='Descubre la solución perfecta para recuperar tu sonrisa con nuestras prótesis híbridas. Diseñadas para brindar comodidad, funcionalidad y estética incomparables, nuestras prótesis combinan lo mejor de la tecnología moderna y la artesanía experta. Recupera tu confianza y disfruta de una sonrisa radiante con nuestras prótesis híbridas.'
-        alt='Ejemeplo de una prótesis híbrida'
+      <Dentist
+        img="/hibrido.webp"
+        title="Prótesis Híbrida"
+        description="Descubre la solución perfecta para recuperar tu sonrisa con nuestras prótesis híbridas. Diseñadas para brindar comodidad, funcionalidad y estética incomparables, nuestras prótesis combinan lo mejor de la tecnología moderna y la artesanía experta. Recupera tu confianza y disfruta de una sonrisa radiante con nuestras prótesis híbridas."
+        alt="Ejemeplo de una prótesis híbrida"
         clases="rounded-ee-[80px]"
       />
-      <Dentist 
-        img='/carillas-1.webp'
-        title='Carillas de Resina'
-        description='¡Consigue una sonrisa perfecta al instante con las carillas de resina! Corrige manchas, grietas y desalineaciones en sólo unas pocas visitas. Obtén resultados naturales y duraderos sin esperas. ¡Descubre la solución rápida y efectiva para una sonrisa impecable!'
-        alt='Sonrisa con carillas de resina'
+      <Dentist
+        img="/carillas-1.webp"
+        title="Carillas de Resina"
+        description="¡Consigue una sonrisa perfecta al instante con las carillas de resina! Corrige manchas, grietas y desalineaciones en sólo unas pocas visitas. Obtén resultados naturales y duraderos sin esperas. ¡Descubre la solución rápida y efectiva para una sonrisa impecable!"
+        alt="Sonrisa con carillas de resina"
         clases="rounded-es-[80px]"
       />
-      <Dentist 
-        img='/implante.webp'
-        title='Implantes Dentales'
-        description='Transforma tu sonrisa con nuestros implantes dentales de alta calidad. Recupera la funcionalidad y la estética de tus dientes de forma duradera y segura. Con tecnología avanzada y un equipo experto, te ofrecemos soluciones personalizadas para restaurar tu confianza y tu bienestar oral. ¡Descubre una sonrisa nueva y radiante con nuestros implantes dentales!'
-        alt='Implante dental'
+      <Dentist
+        img="/implante.webp"
+        title="Implantes Dentales"
+        description="Transforma tu sonrisa con nuestros implantes dentales de alta calidad. Recupera la funcionalidad y la estética de tus dientes de forma duradera y segura. Con tecnología avanzada y un equipo experto, te ofrecemos soluciones personalizadas para restaurar tu confianza y tu bienestar oral. ¡Descubre una sonrisa nueva y radiante con nuestros implantes dentales!"
+        alt="Implante dental"
         clases="rounded-ss-[80px]"
       />
-      <Dentist 
-        img='/sonrisa.webp'
-        title='Blanqueamiento Dental'
-        description='¡Deslumbra con una sonrisa más brillante que nunca gracias a nuestro servicio de blanqueamiento dental! Nuestro tratamiento seguro y efectivo elimina manchas y decoloraciones, revelando dientes más blancos y radiantes en poco tiempo. Con la atención experta de nuestro equipo, obtendrás resultados visibles y duraderos, ¡recupera la confianza en tu sonrisa y presume de un aspecto más saludable y juvenil hoy mismo!'
-        alt='Ejemplo de blanqueamiento dental'
+      <Dentist
+        img="/sonrisa.webp"
+        title="Blanqueamiento Dental"
+        description="¡Deslumbra con una sonrisa más brillante que nunca gracias a nuestro servicio de blanqueamiento dental! Nuestro tratamiento seguro y efectivo elimina manchas y decoloraciones, revelando dientes más blancos y radiantes en poco tiempo. Con la atención experta de nuestro equipo, obtendrás resultados visibles y duraderos, ¡recupera la confianza en tu sonrisa y presume de un aspecto más saludable y juvenil hoy mismo!"
+        alt="Ejemplo de blanqueamiento dental"
         clases="rounded-se-[80px]"
       />
-      <Dentist 
-        img='/disenio.webp'
-        title='Diseño de Sonrisa'
-        description='Logra la sonrisa de tus sueños con nuestro servicio de diseño de sonrisa. Nuestro equipo de expertos en estética dental trabaja contigo para crear una sonrisa personalizada y deslumbrante que refleje tu estilo y personalidad. Utilizando las últimas técnicas y tecnologías, te ayudamos a alcanzar una sonrisa radiante y segura que te haga sentir seguro y feliz. ¡Descubre tu mejor sonrisa con nosotros!'
-        alt='Ejemplo de diseño de sonrisa'
+      <Dentist
+        img="/disenio.webp"
+        title="Diseño de Sonrisa"
+        description="Logra la sonrisa de tus sueños con nuestro servicio de diseño de sonrisa. Nuestro equipo de expertos en estética dental trabaja contigo para crear una sonrisa personalizada y deslumbrante que refleje tu estilo y personalidad. Utilizando las últimas técnicas y tecnologías, te ayudamos a alcanzar una sonrisa radiante y segura que te haga sentir seguro y feliz. ¡Descubre tu mejor sonrisa con nosotros!"
+        alt="Ejemplo de diseño de sonrisa"
         clases="rounded-ee-[80px]"
       />
     </div>
