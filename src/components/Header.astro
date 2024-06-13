@@ -1,11 +1,12 @@
 ---
 import ArrowDown from "../components/ArrowDown.astro";
+import XIcon from "./XIcon.astro";
 ---
 
 <header class="flex w-full flex-col justify-center items-center">
   <div class="w-full lista">
     <nav>
-      <a href="/">
+      <a href="/" class="w-max">
         <img
           src="/logo-arte-dental-full-alt.png"
           alt="Logo Harmony"
@@ -17,54 +18,60 @@ import ArrowDown from "../components/ArrowDown.astro";
         <span class="bg-primary"></span>
         <span class="bg-primary"></span>
       </button>
-      <ul class="list bg-primary/90" id="menu">
+      <ul class="list bg-primary/90 text-white text-xl md:text-black" id="menu">
         <li class="md:hidden">
           <button id="Close">
-            <i class="bi bi-x-lg"></i>
+            <XIcon class="w-8 h-8 text-white" />
           </button>
         </li>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/#servicios">Sercicios</a></li>
-        <li
-          class="relative flex justify-center items-end flex-col dropcontent"
-          id="dropdown"
-        >
+        <li><a href="/" class="transition md:hover:text-third">Inicio</a></li>
+        <li id="services">
+          <a href="/#servicios" class="transition md:hover:text-third"
+            >Sercicios</a
+          >
+        </li>
+        <li class="grid place-items-center">
           <button
-            class="text-white text-xl px-2 py-2 transition hover:text-third cursor-pointer flex md:text-black justify-center items-center"
+            class="text-white text-xl px-2 py-2 transition hover:text-third cursor-pointer relative flex md:text-black justify-center items-center"
             aria-label="Menu carillas"
             id="carillas"
           >
-            Carillas <ArrowDown class="w-4 pl-[2px] md:w-5 md:pl-1" /></button
-          >
-          <!-- DropDown Menu -->
+            Promociones
+            <ArrowDown
+              class="w-5 h-5 ml-[4px] transition md:w-5 md:pl-1"
+              id="arrow"
+            />
+          </button>
           <div
-            class="absolute hidden top-8 rounded-xl left-0 dropdown p-2 md:top-10"
-            id="dropdownContent"
+            class="max-h-0 transition-all duration-300 flex flex-col overflow-hidden md:absolute md:top-10 md:duration-150 md:bg-slate-200/90 md:rounded-xl"
+            id="dropdown-menu"
           >
             <a
-              class="relative inline-block px-2 py-1 transition hover:text-third cursor-pointer"
-              aria-label="carillas"
               href="/carillas"
+              class="md:text-base transition md:hover:text-third">Carillas</a
             >
-              Carillas
-            </a>
             <a
-              class="relative inline-block px-2 py-1 transition hover:text-third cursor-pointer"
-              aria-label="microcarillas"
               href="/microcarillas"
+              class="md:text-base transition md:hover:text-third"
+              >Microcarillas</a
             >
-              Microcarillas
-            </a>
           </div>
         </li>
-        <li><a href="#Ubicacion">Ubicación</a></li>
+        <li id="location">
+          <a href="#ubicacion" class="transition md:hover:text-third"
+            >Ubicación</a
+          >
+        </li>
         <li>
           <a
             href="https://wa.me/525516513563?text=Buenas%20tardes,%20solicito%20informaci%C3%B3n%20sobre"
             target="_blank"
+            class="transition md:hover:text-third"
             rel="noopener noreferrer"
-            title="Número de WhatsApp de la clínica">Contacto</a
+            title="Número de WhatsApp de la clínica"
           >
+            Contacto
+          </a>
         </li>
       </ul>
     </nav>
@@ -104,19 +111,14 @@ import ArrowDown from "../components/ArrowDown.astro";
   }
   .list li {
     margin-top: 20px;
-    font-size: 25px;
-    color: white;
   }
   .list li a {
     position: relative;
     display: inline-block;
-    padding: 10px 15px;
-    margin-left: 5px;
+    padding: 8px;
     text-align: center;
-    font-size: 20px;
     letter-spacing: 1px;
     text-decoration: none;
-    color: white;
     background: transparent;
     cursor: pointer;
     transition: ease-out 0.35s;
@@ -124,7 +126,6 @@ import ArrowDown from "../components/ArrowDown.astro";
     box-shadow: inset 0 0 0 0 var(--gold-200);
   }
   .list li a:hover {
-    color: white;
     box-shadow: inset 0 -100px 0 0 var(--gold-100);
   }
   .list li a:active {
@@ -259,7 +260,7 @@ import ArrowDown from "../components/ArrowDown.astro";
   const menu: any = document.getElementById("menu");
   const cerrar = document.getElementById("Close");
   // Create a MediaQueryList object
-  var x = window.matchMedia("(max-width: 768px)");
+  const x = window.matchMedia("(max-width: 768px)");
 
   function matchM(x: any) {
     if (x.matches) {
@@ -268,12 +269,6 @@ import ArrowDown from "../components/ArrowDown.astro";
         menu.style.animation = "showMenu 0.5s forwards";
       });
       cerrar?.addEventListener("click", () => {
-        menu.style.animation = "hideMenu 0.5s forwards";
-        setTimeout(() => {
-          menu.style.display = "none";
-        }, 500);
-      });
-      menu?.addEventListener("click", () => {
         menu.style.animation = "hideMenu 0.5s forwards";
         setTimeout(() => {
           menu.style.display = "none";
@@ -289,18 +284,27 @@ import ArrowDown from "../components/ArrowDown.astro";
     matchM(x);
   });
 
-  const dropdown: any = document.getElementById("dropdown");
-  const dropdownContent: any = document.getElementById("dropdownContent");
-  dropdown.addEventListener("mouseover", () => {
-    dropdownContent.style.display = "block";
-    setTimeout(() => {
-      dropdownContent.style.opacity = "1";
-    }, 50);
+  const $btnDropdown = document.getElementById("carillas");
+  const $dropdownMenu = document.getElementById("dropdown-menu");
+  const $arrow = document.getElementById("arrow");
+  const $serviciosBtn = document.getElementById("services");
+  const $ubicacionBtn = document.getElementById("location");
+
+  $btnDropdown?.addEventListener("click", () => {
+    $dropdownMenu?.classList.toggle("max-h-96");
+    $arrow?.classList.toggle("rotate-180");
   });
-  dropdown.addEventListener("mouseleave", () => {
-    dropdownContent.style.opacity = "0";
+
+  $serviciosBtn?.addEventListener("click", () => {
+    menu.style.animation = "hideMenu 0.5s forwards";
     setTimeout(() => {
-      dropdownContent.style.display = "none";
-    }, 50);
+      menu.style.display = "none";
+    }, 500);
+  });
+  $ubicacionBtn?.addEventListener("click", () => {
+    menu.style.animation = "hideMenu 0.5s forwards";
+    setTimeout(() => {
+      menu.style.display = "none";
+    }, 500);
   });
 </script>

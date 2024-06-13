@@ -3,50 +3,25 @@ import Phone from "./Phone.astro";
 import WhatsApp from "./WhatsApp.astro";
 ---
 
-<div class=" w-20 h-20 flex justify-center items-center flex-col fixed bottom-4 right-4 transition md:w-24 md:h-24">
-  <button 
-    class="w-16 h-16 z-10 rounded-full absolute bottom-0 right-0 bg-primary flex justify-center items-center transition md:w-20 md:h-20 hover:transition hover:bg-primary/70"
-    aria-label="Abrir menu de contacto"
-  >
-    <img class="w-10" src="/favicon-1.svg" alt="Logo Arte Dental Condesa">
-  </button>
-  <a 
-    class="w-16 h-16 tel rounded-full absolute scale-95 bottom-0 right-0 bg-green-900 border-green-900 border-2 flex justify-center items-center text-white transition-all md:w-20 md:h-20 hover:transition hover:bg-green-900/80" 
-    href="tel:5516513563" 
-    target="_blank" 
+<div
+  class="w-20 h-20 flex justify-center items-center flex-col fixed bottom-4 right-4 transition md:w-24 md:h-24"
+>
+  <a
+    class="w-16 h-16 tel rounded-full absolute scale-95 bottom-[70px] right-0 bg-green-900 border-green-900 border-2 flex justify-center items-center text-white transition-all md:w-20 md:h-20 hover:transition hover:bg-green-900/80 md:bottom-20"
+    href="tel:5516513563"
+    target="_blank"
     rel="noopener noreferrer"
     aria-label="Agendar cita"
   >
-    <Phone class="w-8"/>
+    <Phone class="w-8" />
   </a>
-  <a 
-    class="w-16 h-16 whats rounded-full absolute scale-95 bottom-0 right-0 bg-green-500 border-green-500 border-2 flex justify-center items-center text-white transition-all md:w-20 md:h-20 hover:transition hover:bg-green-500/80" 
-    href="https://wa.me/525516513563?text=Buenas%20tardes,%20solicito%20informaci%C3%B3n%20sobre" 
-    target="_blank" 
+  <a
+    class="w-16 h-16 whats rounded-full absolute scale-95 bottom-0 right-0 bg-green-500 border-green-500 border-2 flex justify-center items-center text-white transition-all md:w-20 md:h-20 hover:transition hover:bg-green-500/80"
+    href="https://wa.me/525516513563?text=Buenas%20tardes,%20solicito%20informaci%C3%B3n%20sobre"
+    target="_blank"
     rel="noopener noreferrer"
     aria-label="Agendar cita"
   >
-    <WhatsApp class="w-8"/>
+    <WhatsApp class="w-8" />
   </a>
 </div>
-
-<style>
-  div:hover .tel {
-    right: 70px;
-    transition: all 0.2s linear;
-  }
-  div:hover .whats {
-    bottom: 70px;
-    transition: all 0.2s linear;
-  }
-  @media (min-width: 768px) {
-    div:hover .tel {
-      right: 85px;
-      transition: all 0.2s linear;
-    }
-    div:hover .whats {
-      bottom: 85px;
-      transition: all 0.2s linear;
-    }
-  }
-</style>

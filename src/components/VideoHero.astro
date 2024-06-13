@@ -18,24 +18,11 @@ import ButtonCita from "./ButtonCita.astro";
 </section>
 <section class="w-full flex justify-center items-center">
   <div
-    class="w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:gap-10 md:grid-cols-[repeat(2,_minmax(350px,_600px))] md:max-w-7xl"
+    class="w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:gap-10 md:grid-cols-[repeat(2,_minmax(350px,_600px))] md:max-w-7xl lg:px-10 xl:px-0"
   >
     <article
       class="animate-fade-in-right grid place-items-center order-2 md:order-1 md:mt-0 md:max-w-lg md:place-items-start"
     >
-      <a
-        href="/"
-        class={`w-36 items-center justify-center flex md:justify-start`}
-      >
-        <img
-          loading="eager"
-          class="w-full mb-3"
-          src="/logo-arte-dental-full-alt.png"
-          alt="Logo Arte Dental"
-          width="532"
-          height="254"
-        />
-      </a>
       <h1
         class="text-gray-800 font-bold text-2xl text-center md:text-start md:text-4xl"
       >
@@ -54,7 +41,7 @@ import ButtonCita from "./ButtonCita.astro";
           Condesa!</span
         >
       </p>
-      <ButtonCita text="5516513563" error="" />
+      <ButtonCita text="5516513563" error="" pulse />
     </article>
     <iframe
       class="w-full aspect-video max-w-5xl rounded-2xl order-1 md:order-2"

@@ -1,29 +1,32 @@
 ---
-import ArrowDown from './ArrowDown.astro'
-import ButtonCita from './ButtonCita.astro'
+import ArrowDown from "./ArrowDown.astro";
+import ButtonCita from "./ButtonCita.astro";
 
 interface Props {
-  img: string
-  title: string
-  description: string
-  alt: string
-  clases?: string
+  img: string;
+  title: string;
+  description: string;
+  alt: string;
+  clases?: string;
 }
 
-const { img, title, description, alt, clases } = Astro.props
+const { img, title, description, alt, clases } = Astro.props;
 ---
 
-<article class=" max-w-96 flex flex-col justify-start h-full btnServices">
-  <img class={clases} src={img} alt={alt}>
+<article class="max-w-96 flex flex-col justify-start h-full btnServices">
+  <img class={clases} src={img} alt={alt} />
   <button class="w-full flex justify-between items-center">
-    <h3 class=" font-bold text-xl text-gray-800 my-3">{title}</h3>
-    <ArrowDown class="w-4 pl-[2px] transition-all text-gray-800 md:w-6 md:pl-0"/>
-  </button>
-  <div class="max-h-0 transition-all duration-[500ms] overflow-hidden origin-bottom" id="text">
-    <p>{description}</p>
-    <ButtonCita 
-      text="Contáctanos"
+    <h3 class="font-bold text-xl text-gray-800 my-3">{title}</h3>
+    <ArrowDown
+      class="w-4 pl-[2px] transition-all text-gray-800 md:w-6 md:pl-0"
     />
+  </button>
+  <div
+    class="max-h-0 transition-all duration-[500ms] overflow-hidden origin-bottom"
+    id="text"
+  >
+    <p>{description}</p>
+    <ButtonCita text="Contáctanos" />
   </div>
 </article>
 
@@ -39,7 +42,7 @@ const { img, title, description, alt, clases } = Astro.props
     color: rgb(11, 60, 60);
   }
   .show {
-    max-height: 300px;
+    max-height: 500px;
     transition: all 0.3s linear;
     transform-origin: top;
   }
@@ -50,14 +53,14 @@ const { img, title, description, alt, clases } = Astro.props
 </style>
 
 <script>
-  const btnShow = document.querySelectorAll('article.btnServices > button')
-  const text = document.querySelectorAll('div#text')
-  const arrow = document.querySelectorAll('article.btnServices > button > svg')
+  const btnShow = document.querySelectorAll("article.btnServices > button");
+  const text = document.querySelectorAll("div#text");
+  const arrow = document.querySelectorAll("article.btnServices > button > svg");
 
-  btnShow.forEach((item, i) => (
-    item.addEventListener('click', () => {
-      text[i].classList.toggle('show')
-      arrow[i].classList.toggle('rotate')
-    })
-  ))
+  btnShow.forEach((item, i) =>
+    item.addEventListener("click", () => {
+      text[i].classList.toggle("show");
+      arrow[i].classList.toggle("rotate");
+    }),
+  );
 </script>

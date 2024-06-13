@@ -2,22 +2,63 @@
 import ButtonCita from "./ButtonCita.astro";
 ---
 
-<section class="w-full flex justify-center items-center my-10 flex-col" id="nosotros">
-  <div class="w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:my-10 md:gap-10 md:grid-cols-2 md:max-w-7xl">
-    <article class=" animate-fade-in-right">
+<section
+  class="w-full flex justify-center items-center my-10 flex-col"
+  id="nosotros"
+>
+  <div
+    class="w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:my-10 md:gap-10 md:grid-cols-2 md:max-w-7xl lg:px-10"
+  >
+    <article class="animate-fade-in-right">
       <h2 class="text-gray-800 font-bold text-4xl md:text-5xl">Conócenos</h2>
-      <hr class=" w-20 border-primary my-6 border-[1px]">
-      <img class="rounded-ee-[80px] mb-6 md:hidden" loading="lazy" src="/nosotros.webp" alt="Team Arte Dental Condesa">
+      <hr class="w-20 border-primary my-6 border-[1px]" />
+      <img
+        class="rounded-ee-[80px] mb-6 md:hidden"
+        loading="lazy"
+        src="/nosotros.webp"
+        alt="Team Arte Dental Condesa"
+      />
       <p>
-        Somos una Clínica Dental comprometida con ofrecerte siempre el mejor servicio para tu salud bucal. Nuestra amplia gama de especialidades y tratamientos está diseñada para atender a toda la familia. Desde los más pequeños hasta los adultos, estamos aquí para cuidar de tus necesidades dentales con atención y profesionalismo.</p>
+        Somos una Clínica Dental comprometida con ofrecerte siempre el mejor
+        servicio para tu salud bucal. Nuestra amplia gama de especialidades y
+        tratamientos está diseñada para atender a toda la familia. Desde los más
+        pequeños hasta los adultos, estamos aquí para cuidar de tus necesidades
+        dentales con atención y profesionalismo.
+      </p>
       <ButtonCita text="Agendar Cita" />
     </article>
-    <img class="hidden rounded-ee-[80px] animate-fade-in-left md:block" src="/nosotros.webp" alt="Team Arte Dental Condesa">
+    <img
+      class="hidden rounded-ee-[80px] animate-fade-in-left md:block"
+      src="/nosotros.webp"
+      alt="Team Arte Dental Condesa"
+    />
   </div>
-  <section class="w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:my-10 md:gap-10 md:grid-cols-4 md:max-w-7xl">
-    <img class=" rounded-ee-[80px] transition hover:transition hover:scale-105" loading="lazy" src="/consultorio-2.webp" alt="Consultorio">
-    <img class="rounded-es-[80px] transition hover:transition hover:scale-105" loading="lazy" src="/consultorio-1.webp" alt="Sala de espera">
-    <img class="rounded-tr-[80px] transition hover:transition hover:scale-105" loading="lazy" src="/consultorio-3.webp" alt="Consultorio">
-    <img class="rounded-tl-[80px] transition hover:transition hover:scale-105" loading="lazy" src="/consultorio.webp" alt="Sala de espera">
+  <section
+    class="w-full px-4 grid grid-cols-1 place-content-center place-items-center gap-3 md:my-10 md:gap-10 md:grid-cols-4 md:max-w-7xl lg:px-10 xl:px-0"
+  >
+    <img
+      class="rounded-ee-[80px] transition hover:transition hover:scale-105"
+      loading="lazy"
+      src="/consultorio-2.webp"
+      alt="Consultorio"
+    />
+    <img
+      class="rounded-es-[80px] transition hover:transition hover:scale-105"
+      loading="lazy"
+      src="/consultorio-1.webp"
+      alt="Sala de espera"
+    />
+    <img
+      class="rounded-tr-[80px] transition hover:transition hover:scale-105"
+      loading="lazy"
+      src="/consultorio-3.webp"
+      alt="Consultorio"
+    />
+    <img
+      class="rounded-tl-[80px] transition hover:transition hover:scale-105"
+      loading="lazy"
+      src="/consultorio.webp"
+      alt="Sala de espera"
+    />
   </section>
 </section>

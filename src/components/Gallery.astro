@@ -5,19 +5,28 @@ import Case from "./Case.astro";
 ---
 
 <div class="w-full flex justify-center items-center mb-10">
-  <section class="w-full grid grid-cols-1 galeria-casos max-w-7xl md:grid-cols-2 lg:grid-cols-3">
-    <article class="px-4 animate-fade-in-right lg:px-0 md:pr-5 md:pb-3">
-      <h2 class="text-gray-800 font-bold text-4xl md:text-5xl">Casos de éxito</h2>
-      <hr class="w-20 border-primary my-6 border-[1px]">
-      <p>En nuestra clínica dental, nos enorgullece compartir una sección dedicada a los casos de éxito de nuestros pacientes. Cada historia es única y representa un testimonio de transformación y satisfacción. Desde la corrección de problemas de alineación hasta la restauración de sonrisas deslumbrantes, nuestros expertos han ayudado a personas de todas las edades a recuperar su confianza y salud bucal.</p>
+  <section
+    class="w-full grid grid-cols-1 galeria-casos max-w-7xl md:grid-cols-2 lg:grid-cols-3 lg:px-10 xl:px-0"
+  >
+    <article class="px-4 animate-fade-in-right lg:px-0 md:pr-5">
+      <h2 class="text-gray-800 font-bold text-4xl xl:text-5xl">
+        Casos de éxito
+      </h2>
+      <hr class="w-20 border-primary my-6 border-[1px]" />
+      <p class="md:pr-4">
+        En nuestra clínica dental, nos enorgullece compartir una sección
+        dedicada a los casos de éxito de nuestros pacientes. Cada historia es
+        única y representa un testimonio de transformación y satisfacción.
+      </p>
       <ButtonCita text="Agendar Cita" />
     </article>
     {
       Array.from({ length: GALLERY.length }).map((_, i) => (
-        <Case 
+        <Case
           treatment={GALLERY[i].treatment}
-          img={`/casos/caso${i+1}.webp`}
+          img={`/casos/caso${i + 1}.webp`}
         />
       ))
     }
   </section>
+</div>

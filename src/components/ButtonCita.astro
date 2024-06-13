@@ -1,14 +1,17 @@
 ---
 interface Props {
-  text?: string
-  error? :string
+  text?: string;
+  error?: string;
+  pulse?: boolean;
 }
-const { text, error } = Astro.props
+const { text, error, pulse } = Astro.props;
 ---
 
-<a 
-  class="py-2 px-4 bg-primary rounded-full inline-block transition text-white my-4 hover:transition-all hover:scale-110" 
-  href={error ? error : 'https://wa.me/525516513563?text=Buenas%20tardes,%20solicito%20informaci%C3%B3n%20sobre'} 
+<a
+  class=`py-3 px-5 bg-primary rounded-full text-white my-4 ${pulse ? 'animate-iteration-count-infinite animate-pulsing' : 'inline-block transition hover:scale-110'} `
+  href={error
+    ? error
+    : "https://wa.me/525516513563?text=Buenas%20tardes,%20solicito%20informaci%C3%B3n%20sobre"}
   target={error ? "_parent" : "_blank"}
   rel="noopener noreferrer"
   aria-label="Agenda tu cita"
