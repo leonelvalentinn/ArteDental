@@ -1,14 +1,15 @@
 ---
-import ButtonFixed from '../components/ButtonFixed.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import ButtonFixed from "../components/ButtonFixed.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
 	title: string;
-	keywords: string
+	keywords: string;
 }
-const url = 'https://artedentalcondesa.com'
-const description = 'Somos una clínica dental especializada en transformar sonrisas mediante carillas, microcarillas e implantes híbridos. Con un enfoque innovador y tecnología de vanguardia, ofrecemos soluciones estéticas y funcionales de alta calidad para mejorar la apariencia y salud dental de nuestros pacientes. ¡Descubre cómo podemos hacer brillar tu sonrisa hoy mismo!'
+const url = "https://artedentalcondesa.com";
+const description =
+	"Somos una clínica dental especializada en transformar sonrisas mediante carillas, microcarillas e implantes híbridos. Con un enfoque innovador y tecnología de vanguardia, ofrecemos soluciones estéticas y funcionales de alta calidad para mejorar la apariencia y salud dental de nuestros pacientes. ¡Descubre cómo podemos hacer brillar tu sonrisa hoy mismo!";
 const { title, keywords } = Astro.props;
 ---
 
@@ -20,46 +21,76 @@ const { title, keywords } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<!-- Meta datos necesarios para cargar imagen al mandar link -->
-		<meta name="author" content="Leonel Valentín">
-		<meta name="keywords" content={keywords}>
+		<meta name="author" content="Leonel Valentín" />
+		<meta name="keywords" content={keywords} />
 		<meta name="description" content={description} />
 		<!-- open graph -->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={url} />
-		<meta property="og:image" content="https://artedentalcondesa.com/favicon.png" />
+		<meta
+			property="og:image"
+			content="https://artedentalcondesa.com/favicon.png"
+		/>
 		<title>{title}</title>
-		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+		></script>
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-WF3RY5RWFL"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-WF3RY5RWFL"
+		></script>
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
 
-			gtag('config', 'G-WF3RY5RWFL');
+			gtag("config", "G-WF3RY5RWFL");
 		</script>
 		<!-- Meta Pixel Code -->
-	<script is:inline>
-		!function(f,b,e,v,n,t,s)
-		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-		n.queue=[];t=b.createElement(e);t.async=!0;
-		t.src=v;s=b.getElementsByTagName(e)[0];
-		s.parentNode.insertBefore(t,s)}(window, document,'script',
-		'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '3117248248408532');
-		fbq('track', 'PageView');
+		<script is:inline>
+			!(function (f, b, e, v, n, t, s) {
+				if (f.fbq) return;
+				n = f.fbq = function () {
+					n.callMethod
+						? n.callMethod.apply(n, arguments)
+						: n.queue.push(arguments);
+				};
+				if (!f._fbq) f._fbq = n;
+				n.push = n;
+				n.loaded = !0;
+				n.version = "2.0";
+				n.queue = [];
+				t = b.createElement(e);
+				t.async = !0;
+				t.src = v;
+				s = b.getElementsByTagName(e)[0];
+				s.parentNode.insertBefore(t, s);
+			})(
+				window,
+				document,
+				"script",
+				"https://connect.facebook.net/en_US/fbevents.js",
+			);
+			fbq("init", "3117248248408532");
+			fbq("track", "PageView");
 		</script>
-		<noscript><img height="1" width="1" style="display:none"
-		src="https://www.facebook.com/tr?id=3117248248408532&ev=PageView&noscript=1"
-		/></noscript>
+		<noscript
+			><img
+				height="1"
+				width="1"
+				style="display:none"
+				src="https://www.facebook.com/tr?id=3117248248408532&ev=PageView&noscript=1"
+			/></noscript
+		>
 		<!-- End Meta Pixel Code -->
 	</head>
 	<body class="bg-[#ffffffe6]">
-		<div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
+		<div
+			class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
+		>
 			<Header />
 			<slot />
 			<ButtonFixed />
@@ -79,11 +110,11 @@ const { title, keywords } = Astro.props;
 		color: white;
 	}
 	body::-webkit-scrollbar {
-		width: 12px;               /* width of the entire scrollbar */
+		width: 12px; /* width of the entire scrollbar */
 	}
 	body::-webkit-scrollbar-thumb {
-		background-color: #0b3c3c;    /* color of the scroll thumb */
-		border-radius: 20px;       /* roundness of the scroll thumb */
-		border: 3px solid white;  /* creates padding around scroll thumb */
+		background-color: #0b3c3c; /* color of the scroll thumb */
+		border-radius: 20px; /* roundness of the scroll thumb */
+		border: 3px solid white; /* creates padding around scroll thumb */
 	}
 </style>
