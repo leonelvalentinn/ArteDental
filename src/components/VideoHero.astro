@@ -1,5 +1,6 @@
 ---
 import ButtonCita from "./ButtonCita.astro";
+import LiteYoutube from "./LiteYoutube.astro";
 ---
 
 <section class="w-full mb-12">
@@ -43,14 +44,10 @@ import ButtonCita from "./ButtonCita.astro";
       </p>
       <ButtonCita text="5516513563" error="" pulse />
     </article>
-    <iframe
-      class="w-full aspect-video max-w-5xl rounded-2xl order-1 md:order-2"
-      src="https://www.youtube.com/embed/Ude_jBpepvA?si=XUd-vUtS532kcQlC"
-      title="Video Presentación Arte Dental Condesa"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    >
-    </iframe>
+    <LiteYoutube
+      videoId="Ude_jBpepvA"
+      title="Microcarillas Dentales"
+      backgroundImage="/portada-video-hero.webp"
+    />
   </div>
 </section>
